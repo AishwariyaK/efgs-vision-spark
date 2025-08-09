@@ -5,6 +5,7 @@ import ServicesSection from "@/components/ServicesSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
+import QuoteSection from "@/components/QuoteSection";
 
 const Index = () => {
   useEffect(() => {
@@ -27,9 +28,10 @@ const Index = () => {
       <Navbar />
       <main>
         <HeroSection />
+        <AboutSection />
         <ServicesSection />
         <ProjectsSection />
-        <AboutSection />
+        <QuoteSection />
         <ContactSection />
       </main>
     </div>

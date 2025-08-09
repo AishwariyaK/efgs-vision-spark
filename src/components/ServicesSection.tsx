@@ -6,44 +6,37 @@ const ServicesSection = () => {
     {
       icon: Camera,
       title: "Photography",
-      description: "Professional photography services for all occasions",
-      features: ["Portrait Photography", "Event Photography", "Product Photography", "Landscape Photography"],
+      description: "Professional photography services capturing life's most beautiful moments",
+      features: ["Portrait Photography", "Event Photography", "Product Photography", "Lifestyle Photography"],
       gradient: "from-primary/20 to-primary/5"
     },
     {
       icon: Video,
       title: "Videography",
-      description: "Cinematic video production and storytelling",
-      features: ["Music Videos", "Documentaries", "Promotional Videos", "Live Streaming"],
+      description: "Cinematic video production and storytelling that brings your vision to life",
+      features: ["Commercial Videos", "Documentary Films", "Music Videos", "Event Coverage"],
       gradient: "from-accent/20 to-accent/5"
     },
     {
       icon: Plane,
-      title: "Aerial",
-      description: "Breathtaking aerial photography and videography",
-      features: ["Drone Photography", "Aerial Videography", "Real Estate Aerials", "Landscape Aerials"],
+      title: "Drone Photography & Videography",
+      description: "Breathtaking aerial perspectives that showcase your world from above",
+      features: ["Aerial Photography", "Drone Videography", "Real Estate Aerials", "Landscape Cinematography"],
       gradient: "from-primary/15 to-primary-glow/10"
     },
     {
       icon: Building,
-      title: "Corporate",
-      description: "Professional corporate content creation",
-      features: ["Corporate Events", "Company Profiles", "Training Videos", "Product Launches"],
+      title: "Post Production",
+      description: "Professional editing and post-production services to perfect your content",
+      features: ["Video Editing", "Color Grading", "Audio Enhancement", "Visual Effects"],
       gradient: "from-secondary/20 to-secondary/5"
     },
     {
       icon: Users,
-      title: "Commercial",
-      description: "Commercial advertising and marketing content",
-      features: ["TV Commercials", "Social Media Content", "Brand Campaigns", "Product Ads"],
+      title: "Digital Marketing",
+      description: "Strategic digital marketing content that engages and converts audiences",
+      features: ["Social Media Content", "Brand Campaigns", "Marketing Videos", "Digital Advertising"],
       gradient: "from-primary-glow/20 to-primary-glow/5"
-    },
-    {
-      icon: Heart,
-      title: "Ceremonies",
-      description: "Capturing life's most precious moments",
-      features: ["Weddings", "Engagements", "Anniversaries", "Special Celebrations"],
-      gradient: "from-accent/15 to-accent/5"
     }
   ];
 
@@ -62,7 +55,7 @@ const ServicesSection = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 max-w-6xl mx-auto">
           {services.map((service, index) => {
             const IconComponent = service.icon;
             return (
@@ -118,26 +111,6 @@ const ServicesSection = () => {
           })}
         </div>
 
-        {/* Call to Action */}
-        <div className="text-center animate-scale-in">
-          <div className="bg-gradient-to-r from-primary/10 via-primary-glow/10 to-primary/10 rounded-2xl p-8 md:p-12 border border-primary/20">
-            <h3 className="font-horas font-bold text-2xl md:text-3xl text-foreground mb-4">
-              Ready to Start Your Project?
-            </h3>
-            <p className="font-ailrons text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Let's discuss your vision and create something extraordinary together. 
-              Every project is unique, and we're here to bring your ideas to life.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="hero" size="xl">
-                Get Free Consultation
-              </Button>
-              <Button variant="outline_hero" size="xl">
-                View Portfolio
-              </Button>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

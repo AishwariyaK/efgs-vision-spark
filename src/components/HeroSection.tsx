@@ -25,12 +25,12 @@ const HeroSection = () => {
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         {/* Main Title */}
         <div className="animate-fade-in">
-          <h1 className="font-horas font-bold text-5xl md:text-7xl lg:text-8xl text-foreground mb-4 leading-tight">
+          <h1 className="font-horas font-bold text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-foreground leading-tight">
             Everything For Good
+            <span className="block font-ailrons text-lg sm:text-xl md:text-3xl lg:text-4xl text-muted-foreground mt-2">
+              Production
+            </span>
           </h1>
-          <p className="font-ailrons text-xl md:text-2xl text-muted-foreground mb-2">
-            Production
-          </p>
         </div>
 
         {/* Tagline */}
@@ -40,20 +40,14 @@ const HeroSection = () => {
           </p>
         </div>
 
-        {/* CTA Buttons */}
-        <div className="animate-scale-in flex flex-col sm:flex-row gap-4 justify-center items-center" style={{ animationDelay: '0.6s' }}>
-          <Button variant="hero" size="xl" className="group">
-            <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-            View Our Work
+        {/* CTA Button */}
+        <div className="animate-scale-in flex flex-col items-center" style={{ animationDelay: '0.6s' }}>
+          <Button variant="hero" size="xl" className="group mb-8">
+            Explore More
           </Button>
-          <Button variant="outline_hero" size="xl">
-            Get Started
-          </Button>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-float">
-          <div className="flex flex-col items-center text-foreground/60">
+          
+          {/* Scroll Indicator */}
+          <div className="flex flex-col items-center text-foreground/60 animate-float">
             <span className="font-ailrons text-sm mb-2">Scroll to explore</span>
             <ChevronDown className="w-6 h-6 animate-bounce" />
           </div>

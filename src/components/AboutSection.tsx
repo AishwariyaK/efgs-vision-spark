@@ -93,16 +93,42 @@ const AboutSection = () => {
           </div>
         </div>
 
-        {/* Mission Statement */}
-        <div className={`mt-20 text-center ${isVisible ? 'animate-scale-in' : 'opacity-0'}`} style={{ animationDelay: '0.8s' }}>
-          <div className="bg-card p-8 rounded-2xl shadow-elegant max-w-4xl mx-auto border border-border">
-            <h3 className="font-horas font-bold text-2xl text-foreground mb-4">
-              Our Mission
-            </h3>
-            <p className="font-ailrons text-lg text-muted-foreground leading-relaxed">
-              "To transform ordinary moments into extraordinary memories through the art of visual storytelling, 
-              ensuring every frame captures the genuine emotion and beauty of life's most precious experiences."
-            </p>
+        {/* What We Stand For */}
+        <div className={`mt-20 text-center ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.8s' }}>
+          <h3 className="font-horas font-bold text-3xl md:text-4xl text-foreground mb-12">
+            What We Stand For
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                title: "Quality",
+                description: "We deliver exceptional quality in every frame, ensuring your vision comes to life with stunning clarity and precision."
+              },
+              {
+                title: "Authenticity", 
+                description: "Every story is unique. We capture authentic moments and genuine emotions that reflect your true essence."
+              },
+              {
+                title: "Collaboration",
+                description: "We work closely with our clients, valuing your input and ideas to create something truly extraordinary together."
+              },
+              {
+                title: "Timelines",
+                description: "We respect your time and deliver projects on schedule without compromising on the quality you deserve."
+              }
+            ].map((value, index) => (
+              <div key={value.title} className="text-center">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="w-8 h-8 bg-primary rounded-full"></div>
+                </div>
+                <h4 className="font-horas font-bold text-xl text-foreground mb-3">
+                  {value.title}
+                </h4>
+                <p className="font-ailrons text-muted-foreground leading-relaxed">
+                  {value.description}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

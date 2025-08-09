@@ -16,9 +16,9 @@ const Navbar = () => {
 
   const navItems = [
     { label: "Home", href: "#home" },
+    { label: "About", href: "#about" },
     { label: "Services", href: "#services" },
     { label: "Projects", href: "#projects" },
-    { label: "About", href: "#about" },
     { label: "Contact", href: "#contact" },
   ];
 
@@ -51,12 +51,6 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
-            <Button variant="hero" size="lg">
-              Get Quote
-            </Button>
-          </div>
 
           {/* Mobile Menu Button */}
           <button
@@ -81,9 +75,6 @@ const Navbar = () => {
                   {item.label}
                 </a>
               ))}
-              <Button variant="hero" size="lg" className="mt-4">
-                Get Quote
-              </Button>
             </div>
           </div>
         )}
