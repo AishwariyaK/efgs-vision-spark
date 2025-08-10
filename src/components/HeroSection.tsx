@@ -10,15 +10,19 @@ const HeroSection = () => {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroBackground})` }}
       >
-        <div className="absolute inset-0 bg-gradient-dark opacity-70"></div>
+        <div className="absolute inset-0 bg-black/50"></div>
       </div>
 
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         {/* Floating particles */}
         <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary rounded-full animate-float opacity-60"></div>
-        <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-primary-glow rounded-full animate-float opacity-40" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-primary rounded-full animate-float opacity-40" style={{ animationDelay: '1s' }}></div>
         <div className="absolute bottom-1/4 left-1/3 w-3 h-3 bg-primary rounded-full animate-float opacity-30" style={{ animationDelay: '2s' }}></div>
+        {/* Scroll animation effect */}
+        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="w-1 h-8 bg-primary/20 rounded-full"></div>
+        </div>
       </div>
 
       {/* Hero Content */}
