@@ -67,25 +67,21 @@ const AboutSection = () => {
             </div>
           </div>
 
-          {/* Stats Grid */}
+          {/* Photo Collage */}
           <div className={`${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.3s' }}>
-            <div className="grid grid-cols-2 gap-6">
-              {stats.map((stat, index) => (
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              {[1, 2, 3, 4, 5, 6].map((index) => (
                 <div
-                  key={stat.label}
-                  className="bg-card p-6 rounded-lg shadow-card hover:shadow-elegant transition-all duration-300 hover:scale-105 group"
+                  key={index}
+                  className="aspect-square bg-gradient-accent rounded-lg overflow-hidden shadow-card hover:shadow-elegant transition-all duration-300 hover:scale-105 group relative"
                   style={{ animationDelay: `${0.5 + index * 0.1}s` }}
                 >
-                  <div className="flex flex-col items-center text-center">
-                    <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                      <stat.icon className="w-8 h-8 text-primary-foreground" />
-                    </div>
-                    <h3 className="font-horas font-bold text-3xl text-foreground mb-2">
-                      {stat.value}
-                    </h3>
-                    <p className="font-ailrons text-sm text-muted-foreground">
-                      {stat.label}
-                    </p>
+                  <div className="absolute inset-0 bg-primary/20 group-hover:bg-primary/30 transition-colors duration-300"></div>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <Camera className="w-8 h-8 text-primary opacity-60 group-hover:opacity-80 transition-opacity" />
+                  </div>
+                  <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                    <p className="font-ailrons text-xs text-foreground">Project {index}</p>
                   </div>
                 </div>
               ))}

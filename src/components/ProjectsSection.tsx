@@ -57,15 +57,15 @@ const ProjectsSection = () => {
         </div>
 
         {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-2 mb-12">
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => setFilter(category)}
-              className={`font-ailrons px-6 py-3 rounded-lg transition-all duration-300 ${
+              className={`font-ailrons px-8 py-4 rounded-full text-sm font-semibold transition-all duration-500 transform hover:scale-105 ${
                 filter === category
-                  ? "bg-primary text-primary-foreground shadow-glow"
-                  : "bg-card text-card-foreground hover:bg-primary/20 border border-border"
+                  ? "bg-primary text-primary-foreground shadow-glow scale-105"
+                  : "bg-background text-foreground hover:bg-primary/10 border-2 border-border hover:border-primary/30"
               }`}
             >
               {category}
@@ -73,50 +73,57 @@ const ProjectsSection = () => {
           ))}
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {/* Projects Grid - Modern Masonry Layout */}
+        <div className="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
           {filteredProjects.map((project, index) => (
             <div
               key={project.id}
               data-index={index}
-              className={`project-card group relative bg-card rounded-lg overflow-hidden shadow-card hover:shadow-elegant transition-all duration-500 hover:scale-105 ${
+              className={`project-card group break-inside-avoid bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-elegant transition-all duration-700 hover:scale-105 hover:-rotate-1 ${
                 visibleProjects.has(index) ? 'animate-fade-in' : 'opacity-0'
               }`}
-              style={{ animationDelay: `${index * 0.1}s` }}
+              style={{ 
+                animationDelay: `${index * 0.15}s`,
+                height: index % 3 === 0 ? '320px' : index % 2 === 0 ? '280px' : '350px'
+              }}
             >
-              {/* Project Image Placeholder */}
-              <div className="relative h-48 bg-gradient-accent">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-16 h-16 bg-primary/30 rounded-full flex items-center justify-center">
-                    <Eye className="w-8 h-8 text-primary" />
-                  </div>
+              {/* Project Image with Modern Overlay */}
+              <div className="relative h-full bg-gradient-accent overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/15 via-transparent to-primary/5"></div>
+                
+                {/* Floating Icon */}
+                <div className="absolute top-4 right-4 w-12 h-12 bg-background/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg">
+                  <Eye className="w-6 h-6 text-primary" />
                 </div>
                 
-                {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-background/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <Button variant="hero" size="sm">
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    View Project
-                  </Button>
-                </div>
-              </div>
-
-              {/* Project Info */}
-              <div className="p-6">
-                <h3 className="font-ailrons font-semibold text-lg text-foreground mb-2 group-hover:text-primary transition-colors">
-                  {project.title}
-                </h3>
-                <p className="font-ailrons text-sm text-muted-foreground mb-4">
-                  {project.description}
-                </p>
-                <div className="flex items-center justify-between">
-                  <span className="font-ailrons text-xs text-primary bg-primary/10 px-3 py-1 rounded-full">
-                    {project.category}
-                  </span>
-                  <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all">
-                    <ExternalLink className="w-4 h-4 text-primary group-hover:text-primary-foreground" />
+                {/* Content Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500">
+                  <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                    <h3 className="font-horas font-bold text-xl text-foreground mb-2">
+                      {project.title}
+                    </h3>
+                    <p className="font-ailrons text-sm text-muted-foreground mb-4 line-clamp-2">
+                      {project.description}
+                    </p>
+                    
+                    <div className="flex items-center justify-between">
+                      <span className="font-ailrons text-xs text-primary bg-primary/15 backdrop-blur-sm px-4 py-2 rounded-full border border-primary/20">
+                        {project.category}
+                      </span>
+                      <Button 
+                        size="sm"
+                        className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6 py-2 font-ailrons font-semibold transition-all duration-300 hover:scale-105"
+                      >
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        View
+                      </Button>
+                    </div>
                   </div>
+                </div>
+
+                {/* Subtle Pattern Overlay */}
+                <div className="absolute inset-0 opacity-20">
+                  <div className="w-full h-full bg-gradient-to-br from-transparent via-primary/5 to-primary/10"></div>
                 </div>
               </div>
             </div>

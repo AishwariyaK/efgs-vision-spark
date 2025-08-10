@@ -1,42 +1,56 @@
-import { Camera, Video, Plane, Users, Building, Heart } from "lucide-react";
+import { Camera, Video, Plane, Users, Building, Lightbulb, PenTool } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const ServicesSection = () => {
   const services = [
     {
+      icon: Lightbulb,
+      title: "Ideation & Strategy",
+      description: "Creative concept development and strategic planning for impactful visual storytelling",
+      features: ["Creative Concepts", "Story Development", "Visual Strategy", "Project Planning"],
+      gradient: "from-primary/20 to-primary/5"
+    },
+    {
+      icon: PenTool,
+      title: "Content Creation",
+      description: "Original content development across multiple platforms and formats",
+      features: ["Script Writing", "Storyboarding", "Visual Content", "Brand Messaging"],
+      gradient: "from-accent/20 to-accent/5"
+    },
+    {
       icon: Camera,
       title: "Photography",
       description: "Professional photography services capturing life's most beautiful moments",
       features: ["Portrait Photography", "Event Photography", "Product Photography", "Lifestyle Photography"],
-      gradient: "from-primary/20 to-primary/5"
+      gradient: "from-primary/15 to-primary/5"
     },
     {
       icon: Video,
-      title: "Videography",
-      description: "Cinematic video production and storytelling that brings your vision to life",
-      features: ["Commercial Videos", "Documentary Films", "Music Videos", "Event Coverage"],
-      gradient: "from-accent/20 to-accent/5"
+      title: "Cinematography",
+      description: "Cinematic video production with artistic vision and technical excellence",
+      features: ["Cinematic Films", "Commercial Videos", "Documentary Style", "Creative Direction"],
+      gradient: "from-primary-glow/20 to-primary-glow/5"
     },
     {
       icon: Plane,
-      title: "Drone Photography & Videography",
-      description: "Breathtaking aerial perspectives that showcase your world from above",
+      title: "Aerial Photography & Videography",
+      description: "Professional drone services for unique perspectives and breathtaking visuals",
       features: ["Aerial Photography", "Drone Videography", "Real Estate Aerials", "Landscape Cinematography"],
-      gradient: "from-primary/15 to-primary-glow/10"
+      gradient: "from-primary/10 to-primary-glow/10"
     },
     {
       icon: Building,
       title: "Post Production",
-      description: "Professional editing and post-production services to perfect your content",
-      features: ["Video Editing", "Color Grading", "Audio Enhancement", "Visual Effects"],
+      description: "Complete post-production services from editing to final delivery",
+      features: ["Video Editing", "Color Grading", "Audio Post", "Motion Graphics"],
       gradient: "from-secondary/20 to-secondary/5"
     },
     {
       icon: Users,
       title: "Digital Marketing",
-      description: "Strategic digital marketing content that engages and converts audiences",
-      features: ["Social Media Content", "Brand Campaigns", "Marketing Videos", "Digital Advertising"],
-      gradient: "from-primary-glow/20 to-primary-glow/5"
+      description: "Strategic digital marketing to amplify your visual content and brand reach",
+      features: ["Social Media Strategy", "Content Distribution", "Brand Development", "Digital Campaigns"],
+      gradient: "from-accent/15 to-accent/5"
     }
   ];
 
