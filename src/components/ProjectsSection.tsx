@@ -1,16 +1,26 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Eye, ExternalLink } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
+  CarouselApi,
 } from "@/components/ui/carousel";
 
 const ProjectsSection = () => {
   const [filter, setFilter] = useState("All");
+  const [api, setApi] = useState<CarouselApi>();
+
+  useEffect(() => {
+    if (!api) return;
+
+    const interval = setInterval(() => {
+      api.scrollNext();
+    }, 6000);
+
+    return () => clearInterval(interval);
+  }, [api]);
 
   const categories = ["All", "Corporate", "Commercial", "Ceremonies", "Aerial"];
 
@@ -60,7 +70,14 @@ const ProjectsSection = () => {
         </div>
 
         {/* Projects Carousel */}
-        <Carousel className="w-full">
+        <Carousel 
+          className="w-full"
+          setApi={setApi}
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+        >
           <CarouselContent className="-ml-2 md:-ml-4">
             {filteredProjects.map((project, index) => (
               <CarouselItem key={project.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
@@ -103,8 +120,6 @@ const ProjectsSection = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
         </Carousel>
 
         {/* View More Button */}

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -33,8 +34,12 @@ const Navbar = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="font-horas font-bold text-xl text-foreground">
-            EFG
+          <div className="flex items-center">
+            <img 
+              src={logo} 
+              alt="EFG Production Logo" 
+              className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12"
+            />
           </div>
 
           {/* Desktop Navigation */}
@@ -43,10 +48,16 @@ const Navbar = () => {
               <a
                 key={item.label}
                 href={item.href}
-                className="font-ailrons text-foreground hover:text-primary transition-colors duration-300 relative group"
+                className={`font-ailrons text-sm md:text-base transition-colors duration-300 relative group ${
+                  isScrolled 
+                    ? "text-foreground hover:text-primary"
+                    : "text-white hover:text-white/80"
+                }`}
               >
                 {item.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                <span className={`absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full ${
+                  isScrolled ? "bg-primary" : "bg-white"
+                }`}></span>
               </a>
             ))}
           </div>
@@ -54,7 +65,9 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-foreground"
+            className={`md:hidden transition-colors duration-300 ${
+              isScrolled ? "text-foreground" : "text-white"
+            }`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
