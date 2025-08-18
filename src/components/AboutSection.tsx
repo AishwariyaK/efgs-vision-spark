@@ -44,7 +44,7 @@ const AboutSection = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
-          <div className={`${isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
+          <div className={`${isVisible ? 'animate-fade-in animate-slide-up' : 'opacity-0 translate-y-10'} transition-all duration-700`}>
             <h2 className="font-horas font-bold text-4xl md:text-5xl text-foreground mb-6">
               About Our Vision
             </h2>
@@ -70,7 +70,7 @@ const AboutSection = () => {
           </div>
 
           {/* Photo Collage - Modern Layout */}
-          <div className={`${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.3s' }}>
+          <div className={`${isVisible ? 'animate-fade-in animate-scale-in' : 'opacity-0 scale-95'} transition-all duration-700 delay-300`}>
             <div className="grid grid-cols-2 gap-4">
               {/* Large Camera Image */}
               <div className="row-span-2 bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group relative">
@@ -108,7 +108,7 @@ const AboutSection = () => {
         </div>
 
         {/* What We Stand For */}
-        <div className={`mt-20 text-center ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.8s' }}>
+        <div className={`mt-20 text-center ${isVisible ? 'animate-fade-in animate-slide-up' : 'opacity-0 translate-y-10'} transition-all duration-700 delay-500`}>
           <h3 className="font-horas font-bold text-3xl md:text-4xl text-foreground mb-12">
             What We Stand For
           </h3>

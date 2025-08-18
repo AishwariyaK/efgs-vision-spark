@@ -19,6 +19,15 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-black/60"></div>
       </div>
 
+      {/* Logo in top left corner */}
+      <div className="absolute top-6 left-6 z-20 animate-fade-in">
+        <img 
+          src="/lovable-uploads/acb4db1e-0b78-4c86-a634-0b251d71761e.png" 
+          alt="Everything For Good Production Logo" 
+          className="h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24 object-contain"
+        />
+      </div>
+
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         {/* Floating particles */}

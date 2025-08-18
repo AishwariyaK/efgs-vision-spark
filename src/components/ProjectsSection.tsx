@@ -80,7 +80,7 @@ const ProjectsSection = () => {
         >
           <CarouselContent className="-ml-2 md:-ml-4">
             {filteredProjects.map((project, index) => (
-              <CarouselItem key={project.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+              <CarouselItem key={project.id} className="pl-2 md:pl-4 basis-4/5 md:basis-2/5">
                 <div className="group bg-card rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-105 animate-fade-in"
                      style={{ animationDelay: `${index * 0.1}s` }}>
                   {/* Project Image */}
