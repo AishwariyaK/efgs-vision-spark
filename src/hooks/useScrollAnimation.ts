@@ -4,13 +4,21 @@ export const useScrollAnimation = () => {
   const [animated, setAnimated] = useState<string[]>([]);
 
   useEffect(() => {
+    // Clear previous animations to ensure they trigger on page refresh
+    setAnimated([]);
+    
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const id = entry.target.getAttribute('data-animate');
-            if (id && !animated.includes(id)) {
-              setAnimated(prev => [...prev, id]);
+            if (id) {
+              setAnimated(prev => {
+                if (!prev.includes(id)) {
+                  return [...prev, id];
+                }
+                return prev;
+              });
             }
           }
         });
@@ -18,7 +26,7 @@ export const useScrollAnimation = () => {
       { threshold: 0.1 }
     );
 
-    // Re-observe elements on every render to ensure animations work after page refresh
+    // Observe elements on every render to ensure animations work after page refresh
     const elements = document.querySelectorAll('[data-animate]');
     elements.forEach((el) => observer.observe(el));
 

@@ -38,7 +38,7 @@ const Navbar = () => {
             <img 
               src="/lovable-uploads/54c62980-2b58-4a1f-bf62-7e259fd35b39.png" 
               alt="Everything For Good Production Logo" 
-              className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 lg:h-14 lg:w-14 object-contain"
+              className="h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 lg:h-20 lg:w-20 xl:h-24 xl:w-24 object-contain"
             />
           </div>
 

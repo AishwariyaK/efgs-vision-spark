@@ -108,8 +108,8 @@ const AboutSection = () => {
         </div>
 
         {/* What We Stand For */}
-        <div className={`mt-20 text-center ${isVisible ? 'animate-fade-in animate-slide-up' : 'opacity-0 translate-y-10'} transition-all duration-700 delay-500`}>
-          <h3 className="font-horas font-bold text-3xl md:text-4xl text-foreground mb-12">
+        <div className={`mt-20 text-center ${isVisible ? 'animate-fade-in' : 'opacity-0'} transition-all duration-700 delay-500`}>
+          <h3 className={`font-horas font-bold text-3xl md:text-4xl text-foreground mb-12 ${isVisible ? 'animate-slide-up' : 'opacity-0 translate-y-10'} transition-all duration-700 delay-600`}>
             What We Stand For
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
