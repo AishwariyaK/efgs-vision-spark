@@ -36,9 +36,9 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex items-center">
             <img 
-              src={logo} 
-              alt="EFG Production Logo" 
-              className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12"
+              src="/lovable-uploads/54c62980-2b58-4a1f-bf62-7e259fd35b39.png" 
+              alt="Everything For Good Production Logo" 
+              className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 lg:h-14 lg:w-14 object-contain"
             />
           </div>
 

@@ -131,14 +131,18 @@ const AboutSection = () => {
                 description: "We respect your time and deliver projects on schedule without compromising on the quality you deserve."
               }
             ].map((value, index) => (
-              <div key={value.title} className="text-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <div className="w-8 h-8 bg-primary rounded-full"></div>
+              <div 
+                key={value.title} 
+                className={`text-center group ${isVisible ? 'animate-scale-in' : 'opacity-0 scale-95'} transition-all duration-500`}
+                style={{ animationDelay: `${0.8 + index * 0.1}s` }}
+              >
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:bg-primary/20 transition-all duration-300">
+                  <div className="w-8 h-8 bg-primary rounded-full group-hover:scale-110 transition-transform duration-300"></div>
                 </div>
-                <h4 className="font-horas font-bold text-xl text-foreground mb-3">
+                <h4 className="font-horas font-bold text-xl text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
                   {value.title}
                 </h4>
-                <p className="font-ailrons text-muted-foreground leading-relaxed">
+                <p className="font-ailrons text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors duration-300">
                   {value.description}
                 </p>
               </div>

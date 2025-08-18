@@ -18,11 +18,12 @@ export const useScrollAnimation = () => {
       { threshold: 0.1 }
     );
 
+    // Re-observe elements on every render to ensure animations work after page refresh
     const elements = document.querySelectorAll('[data-animate]');
     elements.forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
-  }, [animated]);
+  }, []); // Remove animated dependency to allow re-animation
 
   return animated;
 };

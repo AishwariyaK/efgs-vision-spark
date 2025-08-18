@@ -75,7 +75,7 @@ const ServicesSection = () => {
             return (
               <div
                 key={service.title}
-                className="group relative bg-card border border-border rounded-lg p-8 hover:shadow-glow transition-all duration-500 animate-slide-up"
+                className="group relative bg-card border border-border rounded-lg p-8 hover:shadow-glow transition-all duration-500 animate-scale-in hover:-translate-y-2"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {/* Background Gradient */}
@@ -85,8 +85,8 @@ const ServicesSection = () => {
                 <div className="relative z-10">
                   {/* Icon */}
                   <div className="mb-6">
-                    <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
-                      <IconComponent className="w-8 h-8 text-primary group-hover:scale-110 transition-transform duration-300" />
+                    <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-all duration-300 group-hover:scale-110">
+                      <IconComponent className="w-8 h-8 text-primary group-hover:scale-125 transition-transform duration-300" />
                     </div>
                   </div>
 
@@ -94,7 +94,7 @@ const ServicesSection = () => {
                   <h3 className="font-horas font-bold text-xl text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
                     {service.title}
                   </h3>
-                  <p className="font-ailrons text-muted-foreground mb-6 leading-relaxed">
+                  <p className="font-ailrons text-muted-foreground mb-6 leading-relaxed group-hover:text-foreground transition-colors duration-300">
                     {service.description}
                   </p>
 
@@ -103,9 +103,9 @@ const ServicesSection = () => {
                     {service.features.map((feature, featureIndex) => (
                       <li
                         key={featureIndex}
-                        className="font-ailrons text-sm text-muted-foreground flex items-center"
+                        className="font-ailrons text-sm text-muted-foreground flex items-center group-hover:text-foreground transition-colors duration-300"
                       >
-                        <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3 group-hover:scale-125 transition-transform duration-300"></div>
+                        <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></div>
                         {feature}
                       </li>
                     ))}
@@ -115,7 +115,7 @@ const ServicesSection = () => {
                   <Button 
                     variant="outline" 
                     size="sm" 
-                    className="w-full group-hover:border-primary group-hover:text-primary transition-colors duration-300"
+                    className="w-full group-hover:border-primary group-hover:text-primary group-hover:bg-primary/10 transition-all duration-300"
                   >
                     Learn More
                   </Button>
