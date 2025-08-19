@@ -10,23 +10,22 @@ export const useScrollAnimation = () => {
           const id = entry.target.getAttribute('data-animate');
           if (id) {
             if (entry.isIntersecting) {
-              // Add to animated array when entering viewport
+              // Always add to animated array when entering viewport (allows re-animation)
               setAnimated(prev => {
-                if (!prev.includes(id)) {
-                  return [...prev, id];
-                }
-                return prev;
+                // Remove first if exists, then add to trigger re-animation
+                const filtered = prev.filter(animatedId => animatedId !== id);
+                return [...filtered, id];
               });
             } else {
-              // Remove from animated array when leaving viewport
+              // Remove from animated array when leaving viewport (enables re-animation on re-entry)
               setAnimated(prev => prev.filter(animatedId => animatedId !== id));
             }
           }
         });
       },
       { 
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px' // Trigger slightly before element fully enters/leaves
+        threshold: 0.15, // Slightly higher threshold for better trigger timing
+        rootMargin: '0px 0px -30px 0px' // Adjust margin for better scroll detection
       }
     );
 

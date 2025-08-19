@@ -1,7 +1,27 @@
 import { Camera, Video, Plane, Users, Building, Lightbulb, PenTool } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import useEmblaCarousel from 'embla-carousel-react';
+import { useEffect, useState } from 'react';
 
 const ServicesSection = () => {
+  const [emblaRef] = useEmblaCarousel({ 
+    align: 'start',
+    containScroll: 'trimSnaps',
+    dragFree: true
+  });
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   const services = [
     {
       icon: Lightbulb,
@@ -68,62 +88,124 @@ const ServicesSection = () => {
           </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 max-w-6xl mx-auto">
-          {services.map((service, index) => {
-            const IconComponent = service.icon;
-            return (
-              <div
-                key={service.title}
-                className="group relative bg-card border border-border rounded-lg p-8 hover:shadow-glow transition-all duration-500 animate-scale-in hover:-translate-y-2"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                {/* Background Gradient */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
-                
-                {/* Content */}
-                <div className="relative z-10">
-                  {/* Icon */}
-                  <div className="mb-6">
-                    <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-all duration-300 group-hover:scale-110">
-                      <IconComponent className="w-8 h-8 text-primary group-hover:scale-125 transition-transform duration-300" />
+        {/* Services Grid/Carousel */}
+        {isMobile ? (
+          /* Mobile Carousel */
+          <div className="overflow-hidden mb-16" ref={emblaRef}>
+            <div className="flex gap-4 pl-6">
+              {services.map((service, index) => {
+                const IconComponent = service.icon;
+                return (
+                  <div
+                    key={service.title}
+                    className="group relative bg-card border border-border rounded-lg p-6 hover:shadow-glow transition-all duration-500 animate-scale-in hover:-translate-y-2 flex-none w-80"
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
+                    {/* Background Gradient */}
+                    <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+                    
+                    {/* Content */}
+                    <div className="relative z-10">
+                      {/* Icon */}
+                      <div className="mb-4">
+                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-all duration-300 group-hover:scale-110">
+                          <IconComponent className="w-6 h-6 text-primary group-hover:scale-125 transition-transform duration-300" />
+                        </div>
+                      </div>
+
+                      {/* Title & Description */}
+                      <h3 className="font-horas font-bold text-lg text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
+                        {service.title}
+                      </h3>
+                      <p className="font-ailrons text-sm text-muted-foreground mb-4 leading-relaxed group-hover:text-foreground transition-colors duration-300">
+                        {service.description}
+                      </p>
+
+                      {/* Features */}
+                      <ul className="space-y-1 mb-4">
+                        {service.features.slice(0, 3).map((feature, featureIndex) => (
+                          <li
+                            key={featureIndex}
+                            className="font-ailrons text-xs text-muted-foreground flex items-center group-hover:text-foreground transition-colors duration-300"
+                          >
+                            <div className="w-1 h-1 bg-primary rounded-full mr-2 group-hover:scale-150 transition-transform duration-300"></div>
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+
+                      {/* Learn More Button */}
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        className="w-full group-hover:border-primary group-hover:text-primary group-hover:bg-primary/10 transition-all duration-300 text-xs"
+                      >
+                        Learn More
+                      </Button>
                     </div>
                   </div>
+                );
+              })}
+            </div>
+          </div>
+        ) : (
+          /* Desktop Grid */
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 max-w-6xl mx-auto">
+            {services.map((service, index) => {
+              const IconComponent = service.icon;
+              return (
+                <div
+                  key={service.title}
+                  className="group relative bg-card border border-border rounded-lg p-8 hover:shadow-glow transition-all duration-500 animate-scale-in hover:-translate-y-2"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  {/* Background Gradient */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+                  
+                  {/* Content */}
+                  <div className="relative z-10">
+                    {/* Icon */}
+                    <div className="mb-6">
+                      <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-all duration-300 group-hover:scale-110">
+                        <IconComponent className="w-8 h-8 text-primary group-hover:scale-125 transition-transform duration-300" />
+                      </div>
+                    </div>
 
-                  {/* Title & Description */}
-                  <h3 className="font-horas font-bold text-xl text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
-                    {service.title}
-                  </h3>
-                  <p className="font-ailrons text-muted-foreground mb-6 leading-relaxed group-hover:text-foreground transition-colors duration-300">
-                    {service.description}
-                  </p>
+                    {/* Title & Description */}
+                    <h3 className="font-horas font-bold text-xl text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
+                      {service.title}
+                    </h3>
+                    <p className="font-ailrons text-muted-foreground mb-6 leading-relaxed group-hover:text-foreground transition-colors duration-300">
+                      {service.description}
+                    </p>
 
-                  {/* Features */}
-                  <ul className="space-y-2 mb-6">
-                    {service.features.map((feature, featureIndex) => (
-                      <li
-                        key={featureIndex}
-                        className="font-ailrons text-sm text-muted-foreground flex items-center group-hover:text-foreground transition-colors duration-300"
-                      >
-                        <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></div>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
+                    {/* Features */}
+                    <ul className="space-y-2 mb-6">
+                      {service.features.map((feature, featureIndex) => (
+                        <li
+                          key={featureIndex}
+                          className="font-ailrons text-sm text-muted-foreground flex items-center group-hover:text-foreground transition-colors duration-300"
+                        >
+                          <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></div>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
 
-                  {/* Learn More Button */}
-                  <Button 
-                    variant="outline" 
-                    size="sm" 
-                    className="w-full group-hover:border-primary group-hover:text-primary group-hover:bg-primary/10 transition-all duration-300"
-                  >
-                    Learn More
-                  </Button>
+                    {/* Learn More Button */}
+                    <Button 
+                      variant="outline" 
+                      size="sm" 
+                      className="w-full group-hover:border-primary group-hover:text-primary group-hover:bg-primary/10 transition-all duration-300"
+                    >
+                      Learn More
+                    </Button>
+                  </div>
                 </div>
-              </div>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
+        )}
 
       </div>
     </section>
