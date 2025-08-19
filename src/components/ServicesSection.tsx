@@ -1,14 +1,18 @@
 import { Camera, Video, Plane, Users, Building, Lightbulb, PenTool } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
 import { useEffect, useState } from 'react';
 
 const ServicesSection = () => {
-  const [emblaRef] = useEmblaCarousel({ 
-    align: 'start',
-    containScroll: 'trimSnaps',
-    dragFree: true
-  });
+  const [emblaRef] = useEmblaCarousel(
+    { 
+      align: 'start',
+      loop: true,
+      slidesToScroll: 1
+    },
+    [Autoplay({ delay: 6000, stopOnInteraction: false })]
+  );
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -92,13 +96,13 @@ const ServicesSection = () => {
         {isMobile ? (
           /* Mobile Carousel */
           <div className="overflow-hidden mb-16" ref={emblaRef}>
-            <div className="flex gap-4 pl-6">
+            <div className="flex">
               {services.map((service, index) => {
                 const IconComponent = service.icon;
                 return (
                   <div
                     key={service.title}
-                    className="group relative bg-card border border-border rounded-lg p-6 hover:shadow-glow transition-all duration-500 animate-scale-in hover:-translate-y-2 flex-none w-80"
+                    className="group relative bg-card border border-border rounded-lg p-6 hover:shadow-glow transition-all duration-500 animate-scale-in hover:-translate-y-2 flex-none w-full min-w-0 mx-4"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
                     {/* Background Gradient */}
