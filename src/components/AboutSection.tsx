@@ -42,7 +42,7 @@ const AboutSection = () => {
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
           {/* Content */}
           <div className={`${isVisible ? 'animate-fade-in animate-slide-up' : 'opacity-0 translate-y-10'} transition-all duration-700`}>
             <h2 className="font-horas font-bold text-4xl md:text-5xl text-foreground mb-6">

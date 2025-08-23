@@ -62,6 +62,23 @@
     --scroll-offset: 100px;
   }
 
+  /* Typography and spacing utilities */
+  .hero-title-spacing {
+    letter-spacing: 2px;
+  }
+
+  @media (min-width: 768px) {
+    .hero-title-spacing {
+      letter-spacing: 6px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hero-title-spacing {
+      letter-spacing: 10px;
+    }
+  }
+
   /* Scroll Animation Utilities */
   .animate-on-scroll {
     opacity: 0;
