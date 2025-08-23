@@ -42,28 +42,28 @@ const AboutSection = () => {
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
+        <div className="grid grid-cols-2 gap-4 md:gap-16 items-center">
           {/* Content */}
           <div className={`${isVisible ? 'animate-fade-in animate-slide-up' : 'opacity-0 translate-y-10'} transition-all duration-700`}>
-            <h2 className="font-horas font-bold text-4xl md:text-5xl text-foreground mb-6">
+            <h2 className="font-horas font-bold text-lg sm:text-2xl md:text-4xl lg:text-5xl text-foreground mb-3 md:mb-6">
               About Our Vision
             </h2>
-            <div className="space-y-6 font-ailrons text-lg text-muted-foreground leading-relaxed">
+            <div className="space-y-3 md:space-y-6 font-ailrons text-xs sm:text-sm md:text-lg text-muted-foreground leading-relaxed">
               <p>
                 Everything for Good Production is a premium photography and videography 
                 studio specializing in creating timeless stories. With an eye for detail and 
                 a passion for perfection, we transform ordinary moments into extraordinary 
                 memories.
               </p>
-              <p>
+              <p className="hidden sm:block">
                 Our team of professional photographers and videographers brings years of 
                 experience and artistic vision to every project, ensuring that each frame 
                 captures not just an image, but an emotion.
               </p>
             </div>
             
-            <div className="mt-8">
-              <Button variant="outline" className="font-ailrons">
+            <div className="mt-4 md:mt-8">
+              <Button variant="outline" className="font-ailrons text-xs sm:text-sm md:text-base px-3 py-2 md:px-4 md:py-2">
                 Learn More About Us
               </Button>
             </div>
