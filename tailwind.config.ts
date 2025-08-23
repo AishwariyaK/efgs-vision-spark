@@ -19,8 +19,8 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				'horas': ['Orbitron', 'monospace'], // Alternative to Horas Bold
-				'ailrons': ['Exo 2', 'sans-serif'], // Alternative to Ailrons
+				'horas': ['Horas', 'serif'],
+				'ailrons': ['Aileron', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',

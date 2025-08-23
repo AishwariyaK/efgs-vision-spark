@@ -37,8 +37,8 @@ const HeroSection = () => {
         {/* Main Title */}
         <div className="animate-fade-in">
           <h1 className="font-horas font-bold text-2xl sm:text-3xl md:text-6xl lg:text-7xl text-white leading-tight">
-            <span className="inline">Everything For Good</span>
-            <span className="block font-ailrons text-base sm:text-lg md:text-3xl lg:text-4xl text-white/80 mt-1 md:mt-2">
+            <span className="inline whitespace-nowrap" style={{ letterSpacing: '10px' }}>Everything For Good</span>
+            <span className="block font-ailrons text-base sm:text-lg md:text-3xl lg:text-4xl text-white/80 mt-1 md:mt-2" style={{ letterSpacing: '10px' }}>
               Production
             </span>
           </h1>

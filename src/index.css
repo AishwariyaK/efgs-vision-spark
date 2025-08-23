@@ -18,9 +18,9 @@
     --popover-foreground: 222 84% 4%;
 
     /* Brand Colors - EFG Production */
-    --primary: 13 96% 69%; /* #fc7d61 */
+    --primary: 180 58% 45%; /* #30b7b7 */
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 13 100% 75%;
+    --primary-glow: 180 65% 55%;
 
     --secondary: 0 0% 96%;
     --secondary-foreground: 222 84% 4%;
@@ -29,7 +29,7 @@
     --muted: 0 0% 96%;
     --muted-foreground: 0 0% 45%;
 
-    --accent: 13 96% 69%;
+    --accent: 180 58% 45%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -38,7 +38,7 @@
     /* Interactive Elements */
     --border: 0 0% 90%;
     --input: 0 0% 98%;
-    --ring: 13 96% 69%;
+    --ring: 180 58% 45%;
 
     /* Design System Tokens */
     --radius: 0.75rem;
