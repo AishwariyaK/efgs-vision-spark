@@ -63,19 +63,31 @@
   }
 
   /* Typography and spacing utilities */
-  .hero-title-spacing {
+  .hero-title-spacing-mobile {
     letter-spacing: 2px;
   }
-
-  @media (min-width: 768px) {
-    .hero-title-spacing {
-      letter-spacing: 6px;
-    }
+  
+  .hero-title-spacing-tablet {
+    letter-spacing: 6px;
+  }
+  
+  .hero-title-spacing-desktop {
+    letter-spacing: 10px;
   }
 
-  @media (min-width: 1024px) {
-    .hero-title-spacing {
-      letter-spacing: 10px;
+  /* Text animations */
+  .animate-pulse-text {
+    animation: pulse-text 3s ease-in-out infinite;
+  }
+
+  @keyframes pulse-text {
+    0%, 100% {
+      opacity: 0.8;
+      transform: translateY(0);
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(-2px);
     }
   }
 

@@ -33,20 +33,22 @@ const HeroSection = () => {
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
+      <div className="relative z-10 text-center px-4 sm:px-6 w-full flex flex-col items-center justify-center">
         {/* Main Title */}
-        <div className="animate-fade-in">
-          <h1 className="font-horas font-bold text-xl sm:text-2xl md:text-6xl lg:text-7xl text-white leading-tight">
-            <span className="inline whitespace-nowrap hero-title-spacing">Everything For Good</span>
-            <span className="block font-ailrons text-sm sm:text-base md:text-3xl lg:text-4xl text-white/80 mt-1 md:mt-2 hero-title-spacing">
-              Production
+        <div className="animate-fade-in mb-6 md:mb-8">
+          <h1 className="font-horas font-bold text-white leading-tight">
+            <span className="block whitespace-nowrap uppercase text-2xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl hero-title-spacing-mobile sm:hero-title-spacing-tablet md:hero-title-spacing-desktop">
+              EVERYTHING FOR GOOD
+            </span>
+            <span className="block font-ailrons uppercase text-lg sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-white/80 mt-2 md:mt-3 lg:mt-4 hero-title-spacing-mobile sm:hero-title-spacing-tablet md:hero-title-spacing-desktop">
+              PRODUCTION
             </span>
           </h1>
         </div>
 
         {/* Tagline */}
-        <div className="animate-slide-up" style={{ animationDelay: '0.3s' }}>
-          <p className="font-ailrons text-sm sm:text-base md:text-xl text-white/80 mb-8 md:mb-12 max-w-2xl mx-auto leading-relaxed">
+        <div className="animate-slide-up animate-fade-in max-w-3xl mx-auto" style={{ animationDelay: '0.3s' }}>
+          <p className="font-ailrons text-sm sm:text-lg md:text-xl lg:text-2xl text-white/80 mb-8 md:mb-12 leading-relaxed animate-pulse-text">
             Capture your beautiful moments and turn them into memories
           </p>
         </div>
