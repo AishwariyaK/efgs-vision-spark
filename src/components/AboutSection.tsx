@@ -71,35 +71,41 @@ const AboutSection = () => {
 
           {/* Photo Collage - Modern Layout */}
           <div className={`${isVisible ? 'animate-fade-in animate-scale-in' : 'opacity-0 scale-95'} transition-all duration-700 delay-300`}>
-            <div className="grid grid-cols-2 gap-4">
-              {/* Large Camera Image */}
-              <div className="row-span-2 bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group relative">
-                <div className="h-full flex items-center justify-center p-8">
-                  <Camera className="w-16 h-16 text-gray-600" />
-                </div>
+            <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4">
+              {/* Large Camera Image - Beach Dance */}
+              <div className="row-span-2 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group relative">
+                <img 
+                  src="/lovable-uploads/ad231913-6623-4cc7-9182-7a13135f5a6e.png" 
+                  alt="Beautiful beach photography session" 
+                  className="w-full h-full object-cover object-center"
+                />
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-300"></div>
               </div>
               
-              {/* Photographer */}
-              <div className="bg-gradient-to-br from-amber-100 to-orange-200 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group relative aspect-square">
-                <div className="h-full flex items-center justify-center p-6">
-                  <Users className="w-12 h-12 text-amber-700" />
-                </div>
+              {/* Photographer - Skincare Product */}
+              <div className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group relative aspect-square">
+                <img 
+                  src="/lovable-uploads/079d9d70-ed3d-47fd-ad3b-d9da3cc40d97.png" 
+                  alt="Professional product photography" 
+                  className="w-full h-full object-cover object-center"
+                />
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-300"></div>
               </div>
               
-              {/* Video Camera */}
-              <div className="bg-gradient-to-br from-blue-100 to-indigo-200 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group relative aspect-square">
-                <div className="h-full flex items-center justify-center p-6">
-                  <Video className="w-12 h-12 text-blue-700" />
-                </div>
+              {/* Video Camera - Wedding Couple */}
+              <div className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group relative aspect-square">
+                <img 
+                  src="/lovable-uploads/3762cfca-ab04-403f-b7ed-d79fef8490f5.png" 
+                  alt="Traditional wedding videography" 
+                  className="w-full h-full object-cover object-center"
+                />
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-300"></div>
               </div>
               
               {/* Drone */}
               <div className="col-span-2 bg-gradient-to-br from-green-100 to-emerald-200 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group relative">
-                <div className="h-24 flex items-center justify-center">
-                  <Award className="w-12 h-12 text-green-700" />
+                <div className="h-16 sm:h-20 md:h-24 flex items-center justify-center">
+                  <Award className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-green-700" />
                 </div>
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-300"></div>
               </div>
