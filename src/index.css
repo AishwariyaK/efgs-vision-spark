@@ -91,6 +91,24 @@
     }
   }
 
+  @keyframes typewriter {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  @keyframes blink-caret {
+    from, to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: hsl(var(--primary));
+    }
+  }
+
   /* Scroll Animation Utilities */
   .animate-on-scroll {
     opacity: 0;

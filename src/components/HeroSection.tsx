@@ -37,10 +37,10 @@ const HeroSection = () => {
         {/* Main Title */}
         <div className="animate-fade-in mb-6 md:mb-8">
           <h1 className="font-horas font-bold text-white leading-tight">
-            <span className="block whitespace-nowrap uppercase text-2xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl hero-title-spacing-mobile sm:hero-title-spacing-tablet md:hero-title-spacing-desktop">
+            <span className="block whitespace-nowrap uppercase text-2xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl hero-title-spacing-mobile sm:hero-title-spacing-tablet md:hero-title-spacing-desktop overflow-hidden border-r-2 border-primary animate-[typewriter_3s_steps(18)_1s_1_normal_both,blink-caret_1s_step-end_infinite]">
               EVERYTHING FOR GOOD
             </span>
-            <span className="block font-ailrons uppercase text-lg sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-white/80 mt-2 md:mt-3 lg:mt-4 hero-title-spacing-mobile sm:hero-title-spacing-tablet md:hero-title-spacing-desktop">
+            <span className="block font-ailrons uppercase text-lg sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-white/80 mt-2 md:mt-3 lg:mt-4 hero-title-spacing-mobile sm:hero-title-spacing-tablet md:hero-title-spacing-desktop overflow-hidden border-r-2 border-primary/60 animate-[typewriter_2s_steps(10)_4.5s_1_normal_both,blink-caret_1s_step-end_6.5s_infinite]">
               PRODUCTION
             </span>
           </h1>
