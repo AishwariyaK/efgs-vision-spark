@@ -148,23 +148,121 @@
     transform: translateX(0);
   }
 
-  /* Doodle Animations */
-  .animate-float {
-    animation: float var(--float-speed) ease-in-out infinite;
+  /* Professional Background Animations */
+  .animate-slow-drift {
+    animation: slow-drift 40s ease-in-out infinite;
   }
 
-  @keyframes float {
+  .animate-slow-drift-reverse {
+    animation: slow-drift-reverse 35s ease-in-out infinite;
+  }
+
+  .animate-gentle-float {
+    animation: gentle-float 25s ease-in-out infinite;
+  }
+
+  .animate-particle-float {
+    animation: particle-float 20s linear infinite;
+  }
+
+  .animate-line-flow {
+    animation: line-flow 15s ease-in-out infinite;
+  }
+
+  .animate-line-flow-horizontal {
+    animation: line-flow-horizontal 18s ease-in-out infinite;
+  }
+
+  .animate-ambient-glow {
+    animation: ambient-glow 30s ease-in-out infinite;
+  }
+
+  @keyframes slow-drift {
     0%, 100% {
-      transform: translateY(0px) rotate(0deg);
+      transform: translate(0px, 0px) scale(1);
+      opacity: 0.8;
     }
-    25% {
-      transform: translateY(-10px) rotate(1deg);
+    33% {
+      transform: translate(30px, -20px) scale(1.05);
+      opacity: 0.6;
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.95);
+      opacity: 0.9;
+    }
+  }
+
+  @keyframes slow-drift-reverse {
+    0%, 100% {
+      transform: translate(0px, 0px) scale(1);
+      opacity: 0.7;
+    }
+    33% {
+      transform: translate(-25px, 15px) scale(0.9);
+      opacity: 0.9;
+    }
+    66% {
+      transform: translate(20px, -25px) scale(1.1);
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes gentle-float {
+    0%, 100% {
+      transform: translateY(0px) scale(1);
+      opacity: 0.6;
     }
     50% {
-      transform: translateY(-20px) rotate(0deg);
+      transform: translateY(-15px) scale(1.02);
+      opacity: 0.8;
     }
-    75% {
-      transform: translateY(-10px) rotate(-1deg);
+  }
+
+  @keyframes particle-float {
+    0% {
+      transform: translateY(0px) translateX(0px);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100vh) translateX(50px);
+      opacity: 0;
+    }
+  }
+
+  @keyframes line-flow {
+    0%, 100% {
+      opacity: 0.3;
+      transform: scaleY(0.8);
+    }
+    50% {
+      opacity: 0.6;
+      transform: scaleY(1.2);
+    }
+  }
+
+  @keyframes line-flow-horizontal {
+    0%, 100% {
+      opacity: 0.2;
+      transform: scaleX(0.9);
+    }
+    50% {
+      opacity: 0.5;
+      transform: scaleX(1.1);
+    }
+  }
+
+  @keyframes ambient-glow {
+    0%, 100% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 0.8;
     }
   }
 
