@@ -58,8 +58,12 @@
     --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     --bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
-    /* Scroll Animation Variables */
-    --scroll-offset: 100px;
+  /* Scroll Animation Variables */
+  --scroll-offset: 100px;
+
+  /* Doodle Animation Variables */
+  --float-speed: 6s;
+}
   }
 
   /* Typography and spacing utilities */
@@ -143,6 +147,26 @@
   .animate-on-scroll-slide-right.animate {
     opacity: 1;
     transform: translateX(0);
+  }
+
+  /* Doodle Animations */
+  .animate-float {
+    animation: float var(--float-speed) ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    25% {
+      transform: translateY(-10px) rotate(1deg);
+    }
+    50% {
+      transform: translateY(-20px) rotate(0deg);
+    }
+    75% {
+      transform: translateY(-10px) rotate(-1deg);
+    }
   }
 
   .dark {
