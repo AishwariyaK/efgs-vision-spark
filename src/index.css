@@ -148,48 +148,6 @@
     transform: translateX(0);
   }
 
-  /* Floating Squares Background Animations */
-  .animate-square-float {
-    animation: square-float linear infinite;
-  }
-
-  .animate-square-float-slow {
-    animation: square-float-slow linear infinite;
-  }
-
-  @keyframes square-float {
-    0% {
-      transform: translateY(0) rotate(0deg);
-      opacity: 0;
-    }
-    10% {
-      opacity: 1;
-    }
-    90% {
-      opacity: 1;
-    }
-    100% {
-      transform: translateY(-100vh) rotate(360deg);
-      opacity: 0;
-    }
-  }
-
-  @keyframes square-float-slow {
-    0% {
-      transform: translateY(0) rotate(0deg) scale(0.8);
-      opacity: 0;
-    }
-    15% {
-      opacity: 0.6;
-    }
-    85% {
-      opacity: 0.6;
-    }
-    100% {
-      transform: translateY(-110vh) rotate(-180deg) scale(1.2);
-      opacity: 0;
-    }
-  }
 
   .dark {
     /* Already optimized for dark theme */
