@@ -27,7 +27,7 @@ const ClientsSection = () => {
   ];
 
   return (
-    <section id="clients" ref={sectionRef} className="py-20 bg-card">
+    <section id="clients" ref={sectionRef} className="py-20 bg-card/80">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className={`text-center mb-16 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
