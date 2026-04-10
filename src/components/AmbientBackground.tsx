@@ -8,15 +8,14 @@ const CameraIcon = ({ size }: { size: number }) => (
   </svg>
 );
 
-const FilmRollIcon = ({ size }: { size: number }) => (
+const TripodIcon = ({ size }: { size: number }) => (
   <svg width={size} height={size} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="32" cy="32" r="26" stroke="currentColor" strokeWidth="2" fill="none" />
-    <circle cx="32" cy="32" r="8" stroke="currentColor" strokeWidth="2" fill="none" />
-    <circle cx="32" cy="32" r="3" fill="currentColor" />
-    <circle cx="32" cy="12" r="3" stroke="currentColor" strokeWidth="1.5" fill="none" />
-    <circle cx="32" cy="52" r="3" stroke="currentColor" strokeWidth="1.5" fill="none" />
-    <circle cx="12" cy="32" r="3" stroke="currentColor" strokeWidth="1.5" fill="none" />
-    <circle cx="52" cy="32" r="3" stroke="currentColor" strokeWidth="1.5" fill="none" />
+    <rect x="20" y="6" width="24" height="18" rx="3" stroke="currentColor" strokeWidth="2" fill="none" />
+    <circle cx="32" cy="15" r="5" stroke="currentColor" strokeWidth="1.5" fill="none" />
+    <line x1="32" y1="24" x2="32" y2="34" stroke="currentColor" strokeWidth="2" />
+    <line x1="32" y1="34" x2="16" y2="58" stroke="currentColor" strokeWidth="2" />
+    <line x1="32" y1="34" x2="48" y2="58" stroke="currentColor" strokeWidth="2" />
+    <line x1="32" y1="34" x2="32" y2="58" stroke="currentColor" strokeWidth="2" />
   </svg>
 );
 
@@ -29,41 +28,55 @@ const PhotoFrameIcon = ({ size }: { size: number }) => (
   </svg>
 );
 
-const FilmStripIcon = ({ size }: { size: number }) => (
+const DroneIcon = ({ size }: { size: number }) => (
   <svg width={size} height={size} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="14" y="4" width="36" height="56" rx="2" stroke="currentColor" strokeWidth="2" fill="none" />
-    <rect x="18" y="8" width="6" height="4" rx="1" fill="currentColor" opacity="0.5" />
-    <rect x="40" y="8" width="6" height="4" rx="1" fill="currentColor" opacity="0.5" />
-    <rect x="18" y="52" width="6" height="4" rx="1" fill="currentColor" opacity="0.5" />
-    <rect x="40" y="52" width="6" height="4" rx="1" fill="currentColor" opacity="0.5" />
-    <rect x="22" y="24" width="20" height="16" rx="1" stroke="currentColor" strokeWidth="1.5" fill="none" />
+    {/* Body */}
+    <rect x="22" y="26" width="20" height="12" rx="3" stroke="currentColor" strokeWidth="2" fill="none" />
+    {/* Camera lens */}
+    <circle cx="32" cy="38" r="3" stroke="currentColor" strokeWidth="1.5" fill="none" />
+    {/* Arms */}
+    <line x1="22" y1="30" x2="10" y2="20" stroke="currentColor" strokeWidth="2" />
+    <line x1="42" y1="30" x2="54" y2="20" stroke="currentColor" strokeWidth="2" />
+    <line x1="22" y1="34" x2="10" y2="44" stroke="currentColor" strokeWidth="2" />
+    <line x1="42" y1="34" x2="54" y2="44" stroke="currentColor" strokeWidth="2" />
+    {/* Propellers */}
+    <ellipse cx="10" cy="20" rx="8" ry="2" stroke="currentColor" strokeWidth="1.5" fill="none" />
+    <ellipse cx="54" cy="20" rx="8" ry="2" stroke="currentColor" strokeWidth="1.5" fill="none" />
+    <ellipse cx="10" cy="44" rx="8" ry="2" stroke="currentColor" strokeWidth="1.5" fill="none" />
+    <ellipse cx="54" cy="44" rx="8" ry="2" stroke="currentColor" strokeWidth="1.5" fill="none" />
   </svg>
 );
 
-const ApertureIcon = ({ size }: { size: number }) => (
+const FilmCameraIcon = ({ size }: { size: number }) => (
   <svg width={size} height={size} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="32" cy="32" r="24" stroke="currentColor" strokeWidth="2" fill="none" />
-    <line x1="32" y1="8" x2="44" y2="32" stroke="currentColor" strokeWidth="1.5" />
-    <line x1="52.8" y1="20" x2="32" y2="32" stroke="currentColor" strokeWidth="1.5" />
-    <line x1="52.8" y1="44" x2="20" y2="32" stroke="currentColor" strokeWidth="1.5" />
-    <line x1="32" y1="56" x2="20" y2="32" stroke="currentColor" strokeWidth="1.5" />
-    <line x1="11.2" y1="44" x2="32" y2="32" stroke="currentColor" strokeWidth="1.5" />
-    <line x1="11.2" y1="20" x2="44" y2="32" stroke="currentColor" strokeWidth="1.5" />
+    {/* Body */}
+    <rect x="8" y="20" width="36" height="28" rx="3" stroke="currentColor" strokeWidth="2" fill="none" />
+    {/* Lens */}
+    <circle cx="26" cy="34" r="8" stroke="currentColor" strokeWidth="2" fill="none" />
+    <circle cx="26" cy="34" r="4" stroke="currentColor" strokeWidth="1.5" fill="none" />
+    {/* Film reels on top */}
+    <circle cx="16" cy="16" r="6" stroke="currentColor" strokeWidth="2" fill="none" />
+    <circle cx="16" cy="16" r="2" fill="currentColor" />
+    <circle cx="34" cy="16" r="6" stroke="currentColor" strokeWidth="2" fill="none" />
+    <circle cx="34" cy="16" r="2" fill="currentColor" />
+    {/* Viewfinder */}
+    <polygon points="44,28 56,22 56,42 44,36" stroke="currentColor" strokeWidth="2" fill="none" />
   </svg>
 );
 
-const TripodIcon = ({ size }: { size: number }) => (
+const FilmRollIcon = ({ size }: { size: number }) => (
   <svg width={size} height={size} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="20" y="6" width="24" height="18" rx="3" stroke="currentColor" strokeWidth="2" fill="none" />
-    <circle cx="32" cy="15" r="5" stroke="currentColor" strokeWidth="1.5" fill="none" />
-    <line x1="32" y1="24" x2="32" y2="34" stroke="currentColor" strokeWidth="2" />
-    <line x1="32" y1="34" x2="16" y2="58" stroke="currentColor" strokeWidth="2" />
-    <line x1="32" y1="34" x2="48" y2="58" stroke="currentColor" strokeWidth="2" />
-    <line x1="32" y1="34" x2="32" y2="58" stroke="currentColor" strokeWidth="2" />
+    <circle cx="32" cy="32" r="26" stroke="currentColor" strokeWidth="2" fill="none" />
+    <circle cx="32" cy="32" r="8" stroke="currentColor" strokeWidth="2" fill="none" />
+    <circle cx="32" cy="32" r="3" fill="currentColor" />
+    <circle cx="32" cy="12" r="3" stroke="currentColor" strokeWidth="1.5" fill="none" />
+    <circle cx="32" cy="52" r="3" stroke="currentColor" strokeWidth="1.5" fill="none" />
+    <circle cx="12" cy="32" r="3" stroke="currentColor" strokeWidth="1.5" fill="none" />
+    <circle cx="52" cy="32" r="3" stroke="currentColor" strokeWidth="1.5" fill="none" />
   </svg>
 );
 
-const icons = [CameraIcon, FilmRollIcon, PhotoFrameIcon, FilmStripIcon, ApertureIcon, TripodIcon];
+const icons = [CameraIcon, TripodIcon, PhotoFrameIcon, DroneIcon, FilmCameraIcon, FilmRollIcon];
 
 // Pre-generate deterministic items
 const items = Array.from({ length: 18 }, (_, i) => {
