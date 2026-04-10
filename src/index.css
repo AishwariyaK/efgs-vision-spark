@@ -148,6 +148,27 @@
     transform: translateX(0);
   }
 
+  /* Camera Icons Floating Animation */
+  .animate-camera-float {
+    animation: camera-float linear infinite;
+  }
+
+  @keyframes camera-float {
+    0% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-110vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
 
   .dark {
     /* Already optimized for dark theme */
