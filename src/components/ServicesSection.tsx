@@ -79,7 +79,7 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="services" className="py-24 bg-gradient-to-b from-background to-secondary/5">
+    <section id="services" className="py-24 bg-gradient-to-b from-background/80 to-secondary/5">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">

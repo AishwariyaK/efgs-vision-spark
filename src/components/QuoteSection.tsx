@@ -27,7 +27,7 @@ const QuoteSection = () => {
   };
 
   return (
-    <section id="quote" className="py-24 bg-gradient-to-b from-background to-card">
+    <section id="quote" className="py-24 bg-gradient-to-b from-background/80 to-card/80">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
