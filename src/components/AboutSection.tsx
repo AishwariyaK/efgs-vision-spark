@@ -31,7 +31,7 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="about" ref={sectionRef} className="py-20 relative overflow-hidden">
+    <section id="about" ref={sectionRef} className="py-20 relative">
       {/* Parallax Background - transparent to show floating icons */}
       <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-card/60 to-background/80"></div>
       
