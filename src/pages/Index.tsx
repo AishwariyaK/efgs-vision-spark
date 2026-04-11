@@ -32,7 +32,7 @@ const Index = () => {
       <Navbar />
       <main>
         <HeroSection />
-        <div className="relative">
+        <div>
           <AmbientBackground />
           <div data-animate="about" className={`animate-on-scroll ${animated.includes('about') ? 'animate' : ''}`}>
             <AboutSection />
